@@ -4,8 +4,8 @@
             "location": {
                 "province": "La Habana",
                 "municipality": "Boyeros",
-                "lat": "23.054570",
-                "long": "-82.386469"
+                "lat": "23.052426",
+                "long": "-82.383001"
             },
             "currency": ["CUP"],
             "phone_number": "",
@@ -25,23 +25,15 @@
                     "type": "Alimentos",
                     "name": "Arroz 1kg",
                     "currency": ["CUP"],
-                    "price": "650",
+                    "price": "620",
                     "origin": "Importado"
-                },
-                {
-                    "id": "3",
-                    "type": "Alimentos",
-                    "name": "Cartón de Huevo",
-                    "currency": ["CUP"],
-                    "price": "2800",
-                    "origin": "Producción Nacional"
                 },
                 {
                     "id": "4",
                     "type": "Alimentos",
-                    "name": "Pechuga de Pollo 2kg",
+                    "name": "Pollo 5lb",
                     "currency": ["CUP"],
-                    "price": "4500",
+                    "price": "2000",
                     "origin": "Importado"
                 },
                 {
@@ -49,7 +41,7 @@
                     "type": "Alimentos",
                     "name": "Picadillo de MDM 1lb",
                     "currency": ["CUP"],
-                    "price": "320",
+                    "price": "350",
                     "origin": "Importado"
                 },
                 {
@@ -57,7 +49,7 @@
                     "type": "Alimentos",
                     "name": "Aceite 1l",
                     "currency": ["CUP"],
-                    "price": "990",
+                    "price": "1000",
                     "origin": "Importado"
                 },
                 {
@@ -65,7 +57,7 @@
                     "type": "Alimentos",
                     "name": "Spaghettis 500g",
                     "currency": ["CUP"],
-                    "price": "320",
+                    "price": "300",
                     "origin": "Importado"
                 },
                 {
@@ -81,15 +73,7 @@
                     "type": "Alimentos",
                     "name": "Pan(8u)",
                     "currency": ["CUP"],
-                    "price": "280",
-                    "origin": "Importado"
-                },
-                {
-                    "id": "10",
-                    "type": "Alimentos",
-                    "name": "Refrescos en Polvo (paquetico)",
-                    "currency": ["CUP"],
-                    "price": "30",
+                    "price": "270",
                     "origin": "Importado"
                 },
                 {
@@ -97,7 +81,7 @@
                     "type": "Alimentos",
                     "name": "Galletas Saladas(paquetico)",
                     "currency": ["CUP"],
-                    "price": "300",
+                    "price": "200",
                     "origin": "Importado"
                 },
                 {
@@ -105,7 +89,7 @@
                     "type": "Bebidas alcholicas",
                     "name": "Cerveza (Unlaguer)",
                     "currency": ["CUP"],
-                    "price": "230",
+                    "price": "240",
                     "origin": "Importado"
                 },
                 {

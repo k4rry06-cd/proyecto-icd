@@ -3,9 +3,9 @@
             "name": "Desconocido",
             "location": {
                 "province": "La Habana",
-                "municipality": "Boyeros",
-                "lat": "23.054570",
-                "long": "-82.386469"
+                "municipality": "Marianao",
+                "lat": "23.086436",
+                "long": "-82.421763"
             },
             "currency": ["CUP"],
             "phone_number": "",
@@ -49,7 +49,7 @@
                     "type": "Alimentos",
                     "name": "Picadillo de MDM 1lb",
                     "currency": ["CUP"],
-                    "price": "320",
+                    "price": "350",
                     "origin": "Importado"
                 },
                 {
@@ -57,7 +57,7 @@
                     "type": "Alimentos",
                     "name": "Aceite 1l",
                     "currency": ["CUP"],
-                    "price": "990",
+                    "price": "950",
                     "origin": "Importado"
                 },
                 {
@@ -65,7 +65,7 @@
                     "type": "Alimentos",
                     "name": "Spaghettis 500g",
                     "currency": ["CUP"],
-                    "price": "320",
+                    "price": "350",
                     "origin": "Importado"
                 },
                 {
@@ -73,31 +73,7 @@
                     "type": "Alimentos",
                     "name": "Salchichas de Pollo (10u)",
                     "currency": ["CUP"],
-                    "price": "500",
-                    "origin": "Importado"
-                },
-                {
-                    "id": "9",
-                    "type": "Alimentos",
-                    "name": "Pan(8u)",
-                    "currency": ["CUP"],
-                    "price": "280",
-                    "origin": "Importado"
-                },
-                {
-                    "id": "10",
-                    "type": "Alimentos",
-                    "name": "Refrescos en Polvo (paquetico)",
-                    "currency": ["CUP"],
-                    "price": "30",
-                    "origin": "Importado"
-                },
-                {
-                    "id": "11",
-                    "type": "Alimentos",
-                    "name": "Galletas Saladas(paquetico)",
-                    "currency": ["CUP"],
-                    "price": "300",
+                    "price": "380",
                     "origin": "Importado"
                 },
                 {
@@ -109,17 +85,9 @@
                     "origin": "Importado"
                 },
                 {
-                    "id": "13",
-                    "type": "Bebidas alcholicas",
-                    "name": "Whisky (Old Star)",
-                    "currency": ["CUP"],
-                    "price": "1500",
-                    "origin": "Importado"
-                },
-                {
                     "id": "14",
                     "type": "Bebida",
-                    "name": "Refresco de Naranja(Lata)",
+                    "name": "Refresco de Cola(Lata)",
                     "currency": ["CUP"],
                     "price": "240",
                     "origin": "Importado"
