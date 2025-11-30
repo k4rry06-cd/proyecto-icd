@@ -1,24 +1,24 @@
 {
-            "id": "11",
+            "id": "14",
             "name": "Desconocido",
             "location": {
                 "province": "La Habana",
                 "municipality": "Boyeros",
-                "lat": "23.057018",
-                "long": "-82.386955"
+                "lat": "23.047692",
+                "long": "-82.379308"
             },
             "currency": ["CUP"],
             "phone_number": "",
             "social_media": "",
-            "payment_methods": ["Efectivo","Transferencia"],
+            "payment_methods": ["Efectivo ","Transferencia"],
             "product": [
                 {
                     "id": "1",
                     "type": "Alimentos",
                     "name": "Azúcar 1kg",
                     "currency": ["CUP"],
-                    "price": "650",
-                    "origin": "Importado"
+                    "price": "700",
+                    "origin": "Importada"
                 },
                 {
                     "id": "2",
@@ -33,7 +33,7 @@
                     "type": "Alimentos",
                     "name": "Cartón de Huevo",
                     "currency": ["CUP"],
-                    "price": "2800",
+                    "price": "3000",
                     "origin": "Producción Nacional"
                 },
                 {
@@ -57,7 +57,7 @@
                     "type": "Alimentos",
                     "name": "Aceite 1l",
                     "currency": ["CUP"],
-                    "price": "990",
+                    "price": "1000",
                     "origin": "Importado"
                 },
                 {
@@ -73,15 +73,7 @@
                     "type": "Alimentos",
                     "name": "Salchichas de Pollo (10u)",
                     "currency": ["CUP"],
-                    "price": "550",
-                    "origin": "Importado"
-                },
-                {
-                    "id": "9",
-                    "type": "Alimentos",
-                    "name": "Pan(8u)",
-                    "currency": ["CUP"],
-                    "price": "280",
+                    "price": "450",
                     "origin": "Importado"
                 },
                 {
@@ -89,15 +81,7 @@
                     "type": "Alimentos",
                     "name": "Refrescos en Polvo (paquetico)",
                     "currency": ["CUP"],
-                    "price": "30",
-                    "origin": "Importado"
-                },
-                {
-                    "id": "11",
-                    "type": "Alimentos",
-                    "name": "Galletas Saladas(paquetico)",
-                    "currency": ["CUP"],
-                    "price": "300",
+                    "price": "40",
                     "origin": "Importado"
                 },
                 {
@@ -105,7 +89,7 @@
                     "type": "Bebidas alcholicas",
                     "name": "Cerveza (Unlaguer)",
                     "currency": ["CUP"],
-                    "price": "230",
+                    "price": "240",
                     "origin": "Importado"
                 },
                 {
@@ -113,17 +97,8 @@
                     "type": "Bebidas alcholicas",
                     "name": "Whisky (Old Star)",
                     "currency": ["CUP"],
-                    "price": "1600",
-                    "origin": "Importado"
-                },
-                {
-                    "id": "14",
-                    "type": "Bebida",
-                    "name": "Refresco de Naranja(Lata)",
-                    "currency": ["CUP"],
-                    "price": "240",
+                    "price": "1500",
                     "origin": "Importado"
                 }
-                
             ]
         }
