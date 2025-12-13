@@ -28,14 +28,7 @@
                     "price": "1.70",
                     "origin": "Importado"
                 },
-                {
-                    "id": "3",
-                    "type": "Alimentos",
-                    "name": "Cartón de Huevo",
-                    "currency": ["CUP"],
-                    "price": "2800",
-                    "origin": "Producción Nacional"
-                },
+                
                 {
                     "id": "4",
                     "type": "Alimentos",
@@ -60,60 +53,21 @@
                     "price": "2.85",
                     "origin": "Importado"
                 },
-                {
-                    "id": "7",
-                    "type": "Alimentos",
-                    "name": "Spaghettis 500g",
-                    "currency": ["CUP"],
-                    "price": "350",
-                    "origin": "Importado"
-                },
-                {
-                    "id": "8",
-                    "type": "Alimentos",
-                    "name": "Salchichas de Pollo (10u)",
-                    "currency": ["CUP"],
-                    "price": "355",
-                    "origin": "Importado"
-                },
-                {
-                    "id": "9",
-                    "type": "Alimentos",
-                    "name": "Pan(8u)",
-                    "currency": ["CUP"],
-                    "price": "280",
-                    "origin": "Producción Nacional"
-                },
-                {
-                    "id": "10",
-                    "type": "Alimentos",
-                    "name": "Refrescos en Polvo (paquetico)",
-                    "currency": ["CUP"],
-                    "price": "40",
-                    "origin": "Importado"
-                },
-                {
-                    "id": "11",
-                    "type": "Alimentos",
-                    "name": "Galletas Saladas(paquetico)",
-                    "currency": ["CUP"],
-                    "price": "300",
-                    "origin": "Importado"
-                },
+
                 {
                     "id": "12",
                     "type": "Bebidas alcholicas",
                     "name": "Cerveza (Unlaguer)",
-                    "currency": ["CUP"],
-                    "price": "280",
+                    "currency": ["USD"],
+                    "price": "0.80",
                     "origin": "Importado"
                 },
                 {
                     "id": "13",
                     "type": "Bebidas alcholicas",
-                    "name": "Whisky (Old Star)",
-                    "currency": ["CUP"],
-                    "price": "1500",
+                    "name": "Whisky (Crown)",
+                    "currency": ["USD"],
+                    "price": "8.10",
                     "origin": "Importado"
                 },
                 {
