@@ -1,0 +1,121 @@
+{
+            "id": "28",
+            "name": "Super Mini L y 17",
+            "location": {
+                "province": "La Habana",
+                "municipality": "Plaza",
+                "lat": "23.141957",
+                "long": "-82.385239"
+            },
+            "currency": ["CUP"],
+            "phone_number": "",
+            "social_media": "",
+            "payment_methods": ["Efectivo ","Transferencia"],
+            "product": [
+                {
+                    "id": "01",
+                    "type": "Alimentos",
+                    "name": "Azúcar 1kg",
+                    "currency": ["CUP"],
+                    "price": "750",
+                    "origin": "Importada"
+                },
+                {
+                    "id": "02",
+                    "type": "Alimentos",
+                    "name": "Arroz 1kg",
+                    "currency": ["CUP"],
+                    "price": "750",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "03",
+                    "type": "Alimentos",
+                    "name": "Cartón de Huevo",
+                    "currency": ["CUP"],
+                    "price": "3200",
+                    "origin": "Producción Nacional"
+                },
+               
+                {
+                    "id": "05",
+                    "type": "Alimentos",
+                    "name": "Picadillo de MDM 1lb",
+                    "currency": ["CUP"],
+                    "price": "480",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "06",
+                    "type": "Alimentos",
+                    "name": "Aceite 1l",
+                    "currency": ["CUP"],
+                    "price": "1100",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "07",
+                    "type": "Alimentos",
+                    "name": "Spaghettis 500g",
+                    "currency": ["CUP"],
+                    "price": "370",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "08",
+                    "type": "Alimentos",
+                    "name": "Salchichas de Pollo (10u)",
+                    "currency": ["CUP"],
+                    "price": "400",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "09",
+                    "type": "Alimentos",
+                    "name": "Pan(8u)",
+                    "currency": ["CUP"],
+                    "price": "300",
+                    "origin": "Producción Nacional"
+                },
+                {
+                    "id": "10",
+                    "type": "Alimentos",
+                    "name": "Refrescos en Polvo (paquetico)",
+                    "currency": ["CUP"],
+                    "price": "40",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "11",
+                    "type": "Alimentos",
+                    "name": "Galletas Saladas(paquetico)",
+                    "currency": ["CUP"],
+                    "price": "180",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "12",
+                    "type": "Bebidas alcholicas",
+                    "name": "Cerveza (Unlaguer)",
+                    "currency": ["CUP"],
+                    "price": "280",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "13",
+                    "type": "Bebidas alcholicas",
+                    "name": "Whisky (Chancelier)",
+                    "currency": ["CUP"],
+                    "price": "1800",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "14",
+                    "type": "Bebida",
+                    "name": "Refresco de Naranja(Lata)",
+                    "currency": ["CUP"],
+                    "price": "280",
+                    "origin": "Importado"
+                }
+            ]
+        }

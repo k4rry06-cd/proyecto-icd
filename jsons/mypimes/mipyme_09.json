@@ -1,0 +1,129 @@
+{
+            "id": "09",
+            "name": "La Doña",
+            "location": {
+                "province": "La Habana",
+                "municipality": "Boyeros",
+                "lat": "23.057487",
+                "long": "-82.389669"
+            },
+            "currency": ["CUP"],
+            "phone_number": "",
+            "social_media": "",
+            "payment_methods": ["Efectivo","Transferencia"],
+            "product": [
+                {
+                    "id": "01",
+                    "type": "Alimentos",
+                    "name": "Azúcar 1kg",
+                    "currency": ["CUP"],
+                    "price": "650",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "02",
+                    "type": "Alimentos",
+                    "name": "Arroz 1kg",
+                    "currency": ["CUP"],
+                    "price": "700",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "03",
+                    "type": "Alimentos",
+                    "name": "Cartón de Huevo",
+                    "currency": ["CUP"],
+                    "price": "2900",
+                    "origin": "Producción Nacional"
+                },
+                {
+                    "id": "04",
+                    "type": "Alimentos",
+                    "name": "Pechuga de Pollo 2kg",
+                    "currency": ["CUP"],
+                    "price": "4500",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "05",
+                    "type": "Alimentos",
+                    "name": "Picadillo de MDM 1lb",
+                    "currency": ["CUP"],
+                    "price": "350",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "06",
+                    "type": "Alimentos",
+                    "name": "Aceite 1l",
+                    "currency": ["CUP"],
+                    "price": "990",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "07",
+                    "type": "Alimentos",
+                    "name": "Spaghettis 500g",
+                    "currency": ["CUP"],
+                    "price": "350",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "08",
+                    "type": "Alimentos",
+                    "name": "Salchichas de Pollo (10u)",
+                    "currency": ["CUP"],
+                    "price": "550",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "09",
+                    "type": "Alimentos",
+                    "name": "Pan(8u)",
+                    "currency": ["CUP"],
+                    "price": "280",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "10",
+                    "type": "Alimentos",
+                    "name": "Refrescos en Polvo (paquetico)",
+                    "currency": ["CUP"],
+                    "price": "40",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "11",
+                    "type": "Alimentos",
+                    "name": "Galletas Saladas(paquetico)",
+                    "currency": ["CUP"],
+                    "price": "300",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "12",
+                    "type": "Bebidas alcholicas",
+                    "name": "Cerveza (Unlaguer)",
+                    "currency": ["CUP"],
+                    "price": "220",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "13",
+                    "type": "Bebidas alcholicas",
+                    "name": "Whisky (Old Star)",
+                    "currency": ["CUP"],
+                    "price": "1500",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "14",
+                    "type": "Bebida",
+                    "name": "Refresco de Limon(Lata)",
+                    "currency": ["CUP"],
+                    "price": "230",
+                    "origin": "Importado"
+                }
+                
+            ]
+        }

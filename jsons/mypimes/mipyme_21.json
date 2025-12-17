@@ -1,0 +1,121 @@
+{
+            "id": "21",
+            "name": "Mini Market La Complicidad",
+            "location": {
+                "province": "La Habana",
+                "municipality": "Plaza",
+                "lat": "23.133236",
+                "long": "-82.393099"
+            },
+            "currency": ["CUP"],
+            "phone_number": "",
+            "social_media": "",
+            "payment_methods": ["Efectivo ","Transferencia"],
+            "product": [
+                {
+                    "id": "01",
+                    "type": "Alimentos",
+                    "name": "Azúcar 1kg",
+                    "currency": ["CUP"],
+                    "price": "750",
+                    "origin": "Importada"
+                },
+                {
+                    "id": "02",
+                    "type": "Alimentos",
+                    "name": "Arroz 1kg",
+                    "currency": ["CUP"],
+                    "price": "760",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "03",
+                    "type": "Alimentos",
+                    "name": "Cartón de Huevo",
+                    "currency": ["CUP"],
+                    "price": "3300",
+                    "origin": "Producción Nacional"
+                },
+                {
+                    "id": "04",
+                    "type": "Alimentos",
+                    "name": "Pechuga de Pollo 2kg",
+                    "currency": ["CUP"],
+                    "price": "4700",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "05",
+                    "type": "Alimentos",
+                    "name": "Picadillo de MDM 1lb",
+                    "currency": ["CUP"],
+                    "price": "500",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "06",
+                    "type": "Alimentos",
+                    "name": "Aceite 1l",
+                    "currency": ["CUP"],
+                    "price": "1100",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "07",
+                    "type": "Alimentos",
+                    "name": "Spaghettis 500g",
+                    "currency": ["CUP"],
+                    "price": "350",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "08",
+                    "type": "Alimentos",
+                    "name": "Salchichas de Pollo (10u)",
+                    "currency": ["CUP"],
+                    "price": "400",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "09",
+                    "type": "Alimentos",
+                    "name": "Pan(8u)",
+                    "currency": ["CUP"],
+                    "price": "295",
+                    "origin": "Producción Nacional"
+                },
+              
+                {
+                    "id": "11",
+                    "type": "Alimentos",
+                    "name": "Galletas Saladas(paquetico)",
+                    "currency": ["CUP"],
+                    "price": "350",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "12",
+                    "type": "Bebidas alcholicas",
+                    "name": "Cerveza (Cristal)",
+                    "currency": ["CUP"],
+                    "price": "370",
+                    "origin": "Produccion Nacional"
+                },
+                {
+                    "id": "13",
+                    "type": "Bebidas alcholicas",
+                    "name": "Whisky (Old Star)",
+                    "currency": ["CUP"],
+                    "price": "1800",
+                    "origin": "Importado"
+                },
+                {
+                    "id": "14",
+                    "type": "Bebida",
+                    "name": "Refresco de Cola(Lata)",
+                    "currency": ["CUP"],
+                    "price": "280",
+                    "origin": "Importado"
+                }
+            ]
+        }
