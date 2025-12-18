@@ -1,11 +1,11 @@
 {
-            "id": "31",
-            "name": "Bodega Luna",
+            "id": "33",
+            "name": "Toc Toc",
             "location": {
                 "province": "La Habana",
                 "municipality": "Plaza",
-                "lat": "23.142748",
-                "long": "-82.386735"
+                "lat": "23.144736",
+                "long": "-82.388141"
             },
             "currency": ["CUP"],
             "phone_number": "",
@@ -17,7 +17,7 @@
                     "type": "Alimentos",
                     "name": "Azúcar 1kg",
                     "currency": ["CUP"],
-                    "price": "900",
+                    "price": "760",
                     "origin": "Importada"
                 },
                 {
@@ -25,7 +25,7 @@
                     "type": "Alimentos",
                     "name": "Arroz 1kg",
                     "currency": ["CUP"],
-                    "price": "800",
+                    "price": "760",
                     "origin": "Importado"
                 },
                 {
@@ -33,24 +33,31 @@
                     "type": "Alimentos",
                     "name": "Cartón de Huevo",
                     "currency": ["CUP"],
-                    "price": "3400",
+                    "price": "3300",
                     "origin": "Producción Nacional"
                 },
                 {
                     "id": "04",
                     "type": "Alimentos",
-                    "name": "Pechuga de Pollo 2kg",
+                    "name": "Pechuga de Pollo 2kg(Con hueso)",
                     "currency": ["CUP"],
-                    "price": "5600",
+                    "price": "3250",
                     "origin": "Importado"
                 },
-               
+                {
+                    "id": "05",
+                    "type": "Alimentos",
+                    "name": "Picadillo de MDM 1lb",
+                    "currency": ["CUP"],
+                    "price": "450",
+                    "origin": "Importado"
+                },
                 {
                     "id": "06",
                     "type": "Alimentos",
                     "name": "Aceite 1l",
                     "currency": ["CUP"],
-                    "price": "1200",
+                    "price": "990",
                     "origin": "Importado"
                 },
                 {
@@ -66,17 +73,10 @@
                     "type": "Alimentos",
                     "name": "Salchichas de Pollo (10u)",
                     "currency": ["CUP"],
-                    "price": "450",
+                    "price": "400",
                     "origin": "Importado"
                 },
-                {
-                    "id": "09",
-                    "type": "Alimentos",
-                    "name": "Pan(8u)",
-                    "currency": ["CUP"],
-                    "price": "320",
-                    "origin": "Producción Nacional"
-                },
+              
                 {
                     "id": "10",
                     "type": "Alimentos",
@@ -90,31 +90,24 @@
                     "type": "Alimentos",
                     "name": "Galletas Saladas(paquetico)",
                     "currency": ["CUP"],
-                    "price": "240",
+                    "price": "180",
                     "origin": "Importado"
                 },
                 {
                     "id": "12",
                     "type": "Bebidas alcholicas",
-                    "name": "Cerveza (Unlaguer)",
+                    "name": "Cerveza (Cristal)",
                     "currency": ["CUP"],
-                    "price": "320",
-                    "origin": "Importado"
+                    "price": "350",
+                    "origin": "Producción Nacional"
                 },
-                {
-                    "id": "13",
-                    "type": "Bebidas alcholicas",
-                    "name": "Whisky (Chancelier)",
-                    "currency": ["CUP"],
-                    "price": "1700",
-                    "origin": "Importado"
-                },
+               
                 {
                     "id": "14",
                     "type": "Bebida",
                     "name": "Refresco de Naranja(Lata)",
                     "currency": ["CUP"],
-                    "price": "340",
+                    "price": "350",
                     "origin": "Importado"
                 }
             ]
