@@ -3,6 +3,7 @@ import json
 import matplotlib.pyplot as plt
 
 archivos = os.listdir("proyecto-icd/jsons/mypimes")
+salario_promedio=7853
 
 def promedio(producto_buscado):
     precios = []
@@ -11,173 +12,151 @@ def promedio(producto_buscado):
             data = json.load(file)
             for producto in data["product"]:
                 if producto["name"] == producto_buscado:
-                    precios.append(producto["precio"])
+                    producto["price"]=float(producto["price"])
+                    precios.append(producto["price"])
     
     promedio = round(sum(precios)/len(precios))
     return promedio
         
 diccionario = {
-    "Pan": promedio("Pan"),
-    "Leche": promedio("Leche"),
-    "Toallitas húmedas":promedio("Toallitas húmedas"),
-    "Pañales":promedio("Pañales"),
-    "yogurt":promedio("yogurt"),
-    "pollo":promedio("pollo"),
-    "picadillo":promedio("picadillo"),
-    "huevo":promedio("huevo"),
-    "queso":promedio("queso"),
-    "sopas":promedio("sopas"),
-    "arroz":promedio("arroz"),
-    "frijoles":promedio("frijoles"),
-    "aceite":promedio("aceite"),
-    "cereales":promedio("cereales"),
-    "galletas":promedio("galletas")
+   "azucar":promedio("Azúcar 1kg"),
+    "arroz":promedio("Arroz 1kg"),
+    "carton de huevos":promedio("Cartón de Huevo"),
+    "pechuga de pollo":promedio("Pechuga de Pollo 2kg"),
+    "picadillo":promedio("Picadillo de MDM 1lb"),
+    "aceite":promedio("Aceite 1l"),
+    "spaghettis":promedio("Spaghettis 500g"),
+    "perritos":promedio("Salchichas de Pollo (10u)"),
+    "pan":promedio("Pan(8u)")    
 }
 
-def grafico_precio_promedio_vs_pension_minima(diccionario):
+def por_ciento(parte,total):
+    
+    porcentajes={}
+    for producto, precio in diccionario.items():
+        porcentaje=(precio/total)*100
+        porcentajes[producto]=porcentaje
+    return porcentajes    
+
+def promedio2(precios):
+    promedio=round(sum(precios)/len(precios))
+    return promedio
+
+def prom_usd(precio):
+    with open("proyecto-icd/El toque/el_toque.json","r", encoding="utf-8") as file:
+        data = json.load(file)
+        precios=[]
+        for registro in data.get("datos",[]):
+            if "valor" in registro:
+                valor=float(registro["valor"])
+                precios.append(valor)
+    return promedio2(precios)            
+                
+
+
+def grafico_precio_promedio_vs_salario_promedio_en_La_Habana(diccionario):
     keys = diccionario.keys()
     values = diccionario.values()
 
-    plt.bar(keys,values,color="#6a4d57")
-    plt.axhline(y=3056,color="#9c9386",ls="--",label="Pensión mínima")
+    plt.bar(keys,values,color="#0ffff8")
+    plt.axhline(y=7853,color="#03c9f2",ls="--",label="Salario Promedio")
     plt.legend()
-    plt.title("Precio promedio de productos")
-    plt.annotate("Pensión Mínima: 3056",(1,3000),(0,2800))
+    plt.title("Precio de productos")
+    plt.annotate("Salario Promedio en La Habana: 7853",(1,7800),(0,7600))
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.show()
 
+def que_por_ciento_representa_cada_producto_del_salario(diccionario):
+   keys=diccionario.keys()
+   values=por_ciento(diccionario.values(),salario_promedio)
+   values1=list(values.values())
 
-def grafico_servicio_domicilio():
-    disponible=0
-    nodisponible=0
-    for archivo in archivos:
-        with open(f"json/{archivo}",encoding="utf-8") as file:
-            data = json.load(file)
-            if "servicio_a_domicilio" in data:
-                            if data["servicio_a_domicilio"]["valor"]==True:
-                                disponible += 1
-                            else:
-                                nodisponible += 1
-    plt.pie(
-    [disponible, nodisponible],
-    labels=["Disponible", "No disponible"],
-    autopct='%1.1f%%',
-    colors=["#6a4d57", "#9c9386"]
-    )
-    plt.title("Disponibilidad del servicio a domicilio", fontsize=15, fontweight='bold')
-    plt.axis('equal')
-    plt.show()
+   plt.figure(figsize=(12,4))
+   plt.barh(keys,values1,color="#0985ad")
+   plt.gca().invert_yaxis()
+   plt.xlabel("Porcentaje del Salario(%)")
+   plt.title(f"Cuanto cuestan en base al salario({salario_promedio}cup)")
+   plt.tight_layout
+   plt.show()
 
-
-def grafico_precios_marca_producto(producto_buscado="pollo"):
-    lista=[]
-    for archivo in archivos:
-        with open(f"json/{archivo}", encoding="utf-8") as file:
-            data = json.load(file)
-            for producto in data["productos"]:
-                if producto["nombre"].lower().strip() == producto_buscado.lower().strip() and producto["disponible"] == True:
-                    precio = producto["precio"]
-                    unidad_de_medida = str(producto["unidad de medida"])  # revisa si la clave es correcta
-                    marca = str(producto["marca"])
-                    lista.append({"marca": marca, "precio": precio, "unidad_de_medida": unidad_de_medida})
-
-    dic = {}
-    for p in lista:
-        marca = p["marca"]
-        if marca not in dic or p["precio"] <= dic[marca]["precio"]:
-            dic[marca] = p
-
-    lista = sorted(dic.values(), key=lambda x: x["precio"])
-
-    marcas = []
-    precios = []
-    unidades = []
-    for p in lista:
-        marcas.append(p["marca"])
-        precios.append(p["precio"])
-        unidades.append(p["unidad_de_medida"])
-
-    barras = plt.barh(marcas, precios, color="#9c9386")
-    plt.bar_label(barras, unidades, label_type="edge")
-    plt.title("Precios de " + producto_buscado + " ordenados")
-    plt.ylabel("Marca")
-    plt.xlabel("Precio")
-    plt.grid(axis="x", linestyle="--", alpha=0.6)
-    plt.show()
-
-
-def grafico_disponibilidad_mypimes():
-    disponibilidad={}
-    for archivo in archivos:
-        contador=0
-        with open(f"json/{archivo}",encoding="utf-8") as file:
-            data = json.load(file)
-            for producto in data["productos"]:
-                if producto["disponible"]==True:
-                    contador+=1
-                    
-        nombre = archivo.replace(".json", "")
-        disponibilidad[nombre] = contador
-    claves_ordenadas = sorted(disponibilidad.keys(), key=lambda x: int(x.replace("mipyme", "")))
-    valores_ordenados = [disponibilidad[k] for k in claves_ordenadas]
-
-    plt.plot(
-        claves_ordenadas,valores_ordenados,
-        color="#6a4d57",   
-        linewidth=3,          
-        marker="*",         
-        markersize=15 
-        )
-    plt.title(
-        "Disponibilidad de las mipymes",    
-    fontsize=16,                    
-    fontweight="bold"
-    )
-    plt.xlabel("Mipymes", fontsize=12)      
-    plt.ylabel("Artículos Disponibles ($)", fontsize=12)
-    plt.xticks(rotation=45, ha="right")   
+def canasta_basica_al_mes(diccinario):
+    productos=["Arroz","Picadillo","Pan","Aceite"]
+    precios=[promedio("Arroz 1kg")*5,promedio("Picadillo de MDM 1lb")*5,promedio("Pan(8u)")*4,promedio("Aceite 1l")]   
+    total=sum(precios)
+    porcentajes=por_ciento(precios,salario_promedio)
+    colores=["#d96bff","#00d0ff","#48f77d","#ffeb8d"]
+    explode=(0.1,0,0,0)
+    fig,ax=plt.subplots(figsize=(10,8))
+    wedges, texts, aurotexts =ax.pie(
+        precios,
+        labels=productos,
+        autopct="%1.1f%%",
+        startangle=90,
+        colors=colores,
+        explode=explode,
+        shadow=True,
+        wedgeprops={"edgecolor":"white","linewidth":2})
+    plt.setp(texts,size=12,weight="bold")
+    plt.title("Distribución de Gastos Mensuales")
+    ax.axis("equal")
     plt.tight_layout()
-    plt.grid(axis="y", linestyle="--", alpha=0.6)
-    plt.show()
-def comparacion_precio_mipymes(producto_comparar):
-    precios={}
-    pension_promedio=4000
-    cambio_a_usd=450
-    precios_en_usd=[]
-    for archivo in archivos:
-        with open(f"json/{archivo}",encoding="utf-8") as file:
-            data = json.load(file)
-            for producto in data["productos"]:
-                if producto_comparar == producto["nombre"] and producto["disponible"]== True:
-                    nombre=archivo.replace(".json","")
-                    precios[nombre] = producto["precio"]
-    claves_ordenadas = sorted(precios.keys(), key=lambda x: int(x.replace("mipyme", "")))
-    
-    valores_ordenados = [precios[k] for k in claves_ordenadas]
-    
-    for x in valores_ordenados:
-        nuevo_precio=x/cambio_a_usd
-        precios_en_usd.append(nuevo_precio)
-        
-    plt.scatter(claves_ordenadas,precios_en_usd,s=300,color="#9c9386",marker="*")
-    plt.title("Precio del " + producto_comparar + " en usd todas las mipymes")
-    plt.axhline(y=pension_promedio/cambio_a_usd,color="black",linestyle="--",linewidth=2,label="Pensión promedio en USD")
-    plt.legend()
-    plt.text(
-         x=-3.50, y=8.90, 
-    s=f"Pensión promedio: {8.90:.2f} usd",
-    ha="center", va="top", fontsize=10, color="black", backgroundcolor="white")
-    plt.xlabel("Mipymes",fontsize=12)
-    plt.ylabel("Precio en usd($)",fontsize=12)
-    plt.xticks(rotation=45, ha="right")
-    plt.grid(True, linestyle="--", alpha=0.5)
     plt.show()
 
-#llamado
-grafico_precio_promedio_vs_pension_minima(diccionario)    
-comparacion_precio_mipymes(producto_comparar="pollo")
-grafico_precios_marca_producto(producto_buscado="pollo")
-grafico_disponibilidad_mypimes()            
-grafico_servicio_domicilio()            
+def precios_tienda_usd(producto_buscado):
+   
+    with open("proyecto-icd/jsons/tienda usd estatal/tienda_usd_estatal.json","r", encoding="utf-8") as file:
+        data = json.load(file)
+        for producto in data["product"]:
+                if producto["name"] == producto_buscado:
+                    producto["price"]=float(producto["price"])
+                    precio=producto["price"]*prom_usd(diccionario)
+    return precio     
+     
+def comparacion_mypimes_usd(diccinario):
+    productos=["Azúcar 1kg","Arroz 1kg","Pechuga de Pollo 2kg","Picadillo de MDM 1lb","Aceite 1l"]
+    precios_mypimes=[promedio("Azúcar 1kg"),
+                     promedio("Arroz 1kg"),
+                     promedio("Pechuga de Pollo 2kg"),
+                     promedio("Picadillo de MDM 1lb"),
+                     promedio("Aceite 1l")] 
+    precios_usd=[precios_tienda_usd("Azúcar 1kg"),
+                 precios_tienda_usd("Arroz 1kg"),
+                 precios_tienda_usd("Pechuga de Pollo 2kg"),
+                 precios_tienda_usd("Picadillo de MDM 1lb"),
+                 precios_tienda_usd("Aceite 1l")]
+    plt.figure(figsize=(12,7))
+    posiciones= range(len(productos))
+    ancho_barra=0.35
+    barras1=plt.bar([p-ancho_barra/2 for p in posiciones], precios_mypimes,
+                    width=ancho_barra,label="Mypimes",color="#00455a")
+    barras2=plt.bar([p+ancho_barra/2 for p in posiciones],precios_usd,
+                    width=ancho_barra,label="Tiendas en USD",color="#915700")
+    plt.title("Comparación de Precios por producto", fontsize=16,fontweight="bold")
+    plt.xlabel("Productos",fontsize=12)
+    plt.ylabel("Precio(USD)",fontsize=12)
+    plt.xticks(posiciones,productos)
+    plt.legend()
+    plt.grid(axis="y",alpha=0.3,linestyle="--")
+    plt.tight_layout()
+    plt.show()
+
+def minimo(producto_buscado):
+    precios = []
+    for archivo in archivos:
+        with open(f"proyecto-icd/jsons/mypimes/{archivo}",encoding="utf-8") as file:
+            data = json.load(file)
+            for producto in data["product"]:
+                if producto["name"] == producto_buscado:
+                    producto["price"]=float(producto["price"])
+                    precios.append(producto["price"])
     
+    minimo = min(precios)
+    return minimo
+
+
+ 
+#grafico_precio_promedio_vs_salario_promedio_en_La_Habana(diccionario)  
+#que_por_ciento_representa_cada_producto_del_salario(diccionario)
+#canasta_basica_al_mes(diccionario)
+#comparacion_mypimes_usd(diccionario)
