@@ -93,7 +93,7 @@ def que_por_ciento_representa_cada_producto_del_salario(diccionario):
    plt.barh(keys,values1,color="#0985ad")
    plt.gca().invert_yaxis()
    plt.xlabel("Porcentaje del Salario(%)")
-   plt.title(f"Cuanto cuestan en base al salario({salario_promedio}cup)")
+   plt.title(f"Costo de los productos en base al salario({salario_promedio}cup)")
    plt.tight_layout
    plt.show()
 
@@ -303,7 +303,7 @@ def por_ciento_precios_min(diccinario):
 #grafico_precio_promedio_vs_salario_promedio_en_La_Habana(diccionario)  
 #que_por_ciento_representa_cada_producto_del_salario(diccionario)
 #canasta_basica_al_mes(diccionario)
-#comparacion_mypimes_usd(diccionario)
+comparacion_mypimes_usd(diccionario)
 #variacion_del_usd(diccionario)
 #comparacion_prom_vs_min(diccionario)
 #por_ciento_precios_min(diccionario1)
