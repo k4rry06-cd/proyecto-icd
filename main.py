@@ -54,7 +54,7 @@ def promedio2(precios):
 
 #Creo una función que calcule el promedio de los datos de el json de eltoque
 def prom_usd(precio):
-    with open("proyecto-icd/El toque/el_toque.json","r", encoding="utf-8") as file:
+    with open("El toque/el_toque.json","r", encoding="utf-8") as file:
         data = json.load(file)
         precios=[]
         #Extraigo el valor i calculo el promedio
