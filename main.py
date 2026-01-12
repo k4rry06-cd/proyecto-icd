@@ -4,7 +4,7 @@ import json
 import matplotlib.pyplot as plt
 
 #Guardo todos los json 
-archivos = os.listdir("jsons\mypimes")
+archivos = os.listdir("proyecto-icd/jsons/mypimes")
 
 #Establezco el salario promedio para que sea más cómodo
 salario_promedio=7853
@@ -14,7 +14,7 @@ def promedio(producto_buscado):
     precios = []
     #Cargo todos los json
     for archivo in archivos:
-        with open(f"jsons/mypimes/{archivo}",encoding="utf-8") as file:
+        with open(f"proyecto-icd/jsons/mypimes/{archivo}",encoding="utf-8") as file:
             data = json.load(file)
             #Busco el dato que me hace falta
             for producto in data["product"]:
@@ -54,7 +54,7 @@ def promedio2(precios):
 
 #Creo una función que calcule el promedio de los datos de el json de eltoque
 def prom_usd(precio):
-    with open("El toque\el_toque.json","r", encoding="utf-8") as file:
+    with open("proyecto-icd/El toque/el_toque.json","r", encoding="utf-8") as file:
         data = json.load(file)
         precios=[]
         #Extraigo el valor i calculo el promedio
@@ -142,7 +142,7 @@ def canasta_basica_al_mes(diccinario):
 #Creo una función que coja el precio en usd y lo convierta a cup
 def precios_tienda_usd(producto_buscado):
    #Cargo el json
-    with open("jsons/tienda usd estatal/tienda_usd_estatal.json","r", encoding="utf-8") as file:
+    with open("proyecto-icd/jsons/tienda usd estatal/tienda_usd_estatal.json","r", encoding="utf-8") as file:
         data = json.load(file)
         #Cargo el archivo y hago el cambio usando la función de calcular el promedio de el toque
         for producto in data["product"]:
@@ -188,7 +188,7 @@ def minimo(producto_buscado):
     precios = []
     #Cargo los archivos
     for archivo in archivos:
-        with open(f"jsons/mypimes/{archivo}",encoding="utf-8") as file:
+        with open(f"proyecto-icd/jsons/mypimes/{archivo}",encoding="utf-8") as file:
             data = json.load(file)
             #Busco los precios
             for producto in data["product"]:
@@ -202,7 +202,7 @@ def minimo(producto_buscado):
 #Creo la gráfica 5 que es para ver la evolución del dólar
 def variacion_del_usd(diccinario):
     #Cargar el json
-    with open("El toque/el_toque.json","r") as f:
+    with open("proyecto-icd/El toque/el_toque.json","r") as f:
         data = json.load(f)
     #Obtener los valores para la gráfica    
     fechas = [item["fecha"] for item in data["datos"]]
@@ -300,10 +300,10 @@ def por_ciento_precios_min(diccinario):
     plt.tight_layout()
     plt.show()
  
-#grafico_precio_promedio_vs_salario_promedio_en_La_Habana(diccionario)  
-#que_por_ciento_representa_cada_producto_del_salario(diccionario)
-#canasta_basica_al_mes(diccionario)
-#comparacion_mypimes_usd(diccionario)
-#variacion_del_usd(diccionario)
-#comparacion_prom_vs_min(diccionario)
-#por_ciento_precios_min(diccionario1)
+grafico_precio_promedio_vs_salario_promedio_en_La_Habana(diccionario)  
+que_por_ciento_representa_cada_producto_del_salario(diccionario)
+canasta_basica_al_mes(diccionario)
+comparacion_mypimes_usd(diccionario)
+variacion_del_usd(diccionario)
+comparacion_prom_vs_min(diccionario)
+por_ciento_precios_min(diccionario1)
