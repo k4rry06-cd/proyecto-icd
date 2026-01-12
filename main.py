@@ -254,7 +254,7 @@ def por_ciento_precios_min(diccinario):
     plt.show()
  
 #grafico_precio_promedio_vs_salario_promedio_en_La_Habana(diccionario)  
-que_por_ciento_representa_cada_producto_del_salario(diccionario)
+#que_por_ciento_representa_cada_producto_del_salario(diccionario)
 #canasta_basica_al_mes(diccionario)
 #comparacion_mypimes_usd(diccionario)
 #variacion_del_usd(diccionario)
