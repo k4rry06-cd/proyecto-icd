@@ -8,14 +8,12 @@
                 "long": "-82.392605"
             },
             "currency": ["CUP"],
-            "phone_number": "",
-            "social_media": "",
             "payment_methods": ["Efectivo ","Transferencia"],
             "product": [
                 {
                     "id": "01",
                     "type": "Alimentos",
-                    "name": "Azúcar 2lb",
+                    "name": "Azúcar 1kg",
                     "currency": ["CUP"],
                     "price": "500",
                     "origin": "Importada"
@@ -23,7 +21,7 @@
                 {
                     "id": "02",
                     "type": "Alimentos",
-                    "name": "Arroz 2lb",
+                    "name": "Arroz 1kg",
                     "currency": ["CUP"],
                     "price": "540",
                     "origin": "Importado"

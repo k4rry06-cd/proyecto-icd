@@ -1,6 +1,0 @@
-El Dilema del Consumidor
-Este trabajo tiene como objetivo hacer un análisis económico de la situcación en Cuba principalmente en los precios y salarios.
-
-La recolección de datos, se buscó información sobre los precios de 14 productos entre alimentos y bebidas disponibles en el mercado.Se contrastó los datos con los precios de una tienda estatale en usd de los mismos productos.Se buscó información  de la Tasa de Cambio informal referida el 1ro de noviembre de 2025 hasta el 10 de enero de 2026 por El Toque en la red y datos de la ONEI de acceso público. La información se obtuvo por la observación, entrevistas informales a los dependientes, revisión de documentos.
-
-El procesamiento de datos se realizó mediante los json, se crearon diccionarios que contiene las llaves: id,que identifica a cada establecimiento; name: se relaciona con el nombre de cada negocio;location: se refiere a las coordenadas de localización que incluye además el municipio y la provincia;currency: se refiere a la moneda en que se venden los productos;los payment methods:refiere el método de pago. Otro diccionario incluye los productos que se venden, incluyen alimentos y bebidas, de los cuales se tuvo en cuenta el precio, el nombre, el tipo, la procendencia (nacional o importado) además se le dió un id.

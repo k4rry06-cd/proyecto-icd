@@ -27,22 +27,22 @@ def promedio(producto_buscado):
 
  #Creo un diccionario que contenga el preciopromedio de todos los productos       
 diccionario = {
-   "azucar":promedio("Azúcar 1kg"),
-    "arroz":promedio("Arroz 1kg"),
-    "carton de huevos":promedio("Cartón de Huevo"),
-    "pechuga de pollo":promedio("Pechuga de Pollo 2kg"),
-    "picadillo":promedio("Picadillo de MDM 1lb"),
-    "aceite":promedio("Aceite 1l"),
-    "spaghettis":promedio("Spaghettis 500g"),
-    "perritos":promedio("Salchichas de Pollo (10u)"),
-    "pan":promedio("Pan(8u)")    
+   "Azúcar":promedio("Azúcar 1kg"),
+    "Arroz":promedio("Arroz 1kg"),
+    "Huevos":promedio("Cartón de Huevo"),
+    "Pechuga de pollo":promedio("Pechuga de Pollo 2kg"),
+    "Picadillo":promedio("Picadillo de MDM 1lb"),
+    "Aceite":promedio("Aceite 1l"),
+    "Spaghettis":promedio("Spaghettis 500g"),
+    "Perritos":promedio("Salchichas de Pollo (10u)"),
+    "Pan":promedio("Pan(8u)")    
 }
 
 #Creo una función para calcular el por ciento
 def por_ciento(parte,total):
     
     porcentajes={}
-    for producto, precio in diccionario.items():
+    for producto, precio in parte.items():
         porcentaje=(precio/total)*100
         porcentajes[producto]=porcentaje
     return porcentajes   
@@ -57,7 +57,7 @@ def prom_usd(precio):
     with open("El toque/el_toque.json","r", encoding="utf-8") as file:
         data = json.load(file)
         precios=[]
-        #Extraigo el valor i calculo el promedio
+        #Extraigo el valor y calculo el promedio
         for registro in data.get("datos",[]):
             if "valor" in registro:
                 valor=float(registro["valor"])
@@ -66,43 +66,52 @@ def prom_usd(precio):
                 
 
 #Creo la primera gráfica
-def grafico_precio_promedio_vs_salario_promedio_en_La_Habana(diccionario):
+def grafica2(diccionario):
     #Obtengo los valores y llaves del diccionario
     keys = diccionario.keys()
     values = diccionario.values()
 
     #Creo la gráfica de barras con matplotlib
-    plt.bar(keys,values,color="#0ffff8")
-    plt.axhline(y=7853,color="#03c9f2",ls="--",label="Salario Promedio")
-    plt.legend()
-    plt.title("Precio de productos")
-    plt.annotate("Salario Promedio en La Habana: 7853",(1,7800),(0,7600))
-    plt.xticks(rotation=45)
+    plt.figure(figsize=(12,4))
+    bars=plt.bar(keys,values,color="#0ffff8")
+    max_value=max(values)
+    plt.ylim(0,max_value*1.15)
+    plt.bar_label(bars,padding=3,fontsize=9)
+    plt.title("Precio de los Productos  Alimenticios")
+    plt.xticks(rotation=45, ha="right")
     plt.tight_layout()
     plt.show()
 
 #Creo la gráfica 2
-def que_por_ciento_representa_cada_producto_del_salario(diccionario):
+def grafica3(diccionario):
    #Cargo los valores y llaves del diccionario, saco la relación del porciento y convierto los valores en una lista
    keys=diccionario.keys()
-   values=por_ciento(diccionario.values(),salario_promedio)
-   values1=list(values.values())
+   porcentajes=por_ciento(diccionario,salario_promedio)
+   valores_porcentajes=list(porcentajes.values())
 
 #Creo la gráfica con matplotlib
    plt.figure(figsize=(12,4))
-   plt.barh(keys,values1,color="#0985ad")
+   bars=plt.barh(keys,valores_porcentajes,color="#0985ad")
    plt.gca().invert_yaxis()
+   plt.axvline(x=100, color="#890013", linestyle="--",linewidth=1.5,alpha=0.8)
+   plt.text(100,-0.5, "Salario Promedio", color="#010808",va="top",fontweight="bold",fontsize=10)
+    #Le muestro los porcentajes correspondientes a cada barra
+   for bar in bars:
+       width=bar.get_width()
+       plt.text(width + 0.5,bar.get_y() + bar.get_height()/2,
+                f"{width:.1f}%", va="center", ha="left", fontsize=9) 
+
    plt.xlabel("Porcentaje del Salario(%)")
-   plt.title(f"Costo de los productos en base al salario({salario_promedio}cup)")
-   plt.tight_layout
+   plt.title(f"Porciento del salario que representa cada producto")
+   plt.tight_layout()
    plt.show()
 
 #Creo la gráfica 3
-def canasta_basica_al_mes(diccinario):
+def grafica4(diccinario):
     #Como esta gráfica es distinta y más resumida uso menos productos
-    productos=["arroz","picadillo","pan","aceite"]
+    productos=["Arroz","Picadillo","Azúcar","Aceite"]
     #Calculo una lista con los precios utilizando promedio, además lo multiplico ya que estamos viendo la cantidad de productos usados en un mes
-    precios=[promedio("Arroz 1kg")*5,promedio("Picadillo de MDM 1lb")*5,promedio("Pan(8u)")*4,promedio("Aceite 1l")]   
+    precios=[promedio("Arroz 1kg")*5,promedio("Picadillo de MDM 1lb")*5,promedio("Azúcar 1kg"),promedio("Aceite 1l")]   
     total=sum(precios)
     #Transformo los precios en porcentajes y luego enlistas
     precios_dict = {producto: precio for producto,precio in zip(productos,precios)}
@@ -130,11 +139,11 @@ def canasta_basica_al_mes(diccinario):
             
    
     plt.legend(wedges,leyenda_labels,
-               title="Detalle de Gastos",
+               title="Productos",
                loc="center left",
                bbox_to_anchor=(1,0,0.5,1),
                fontsize=10 )
-    plt.title("Distribución de Gastos Mensuales")
+    plt.title("Capacidad de Compra del Salario")
     ax.axis("equal")
     plt.tight_layout()
     plt.show()
@@ -152,7 +161,7 @@ def precios_tienda_usd(producto_buscado):
     return precio
      
 #Creo la gráfica 4 que es para comparar las mypimes con las tiendas usd     
-def comparacion_mypimes_usd(diccinario):
+def grafica5(diccinario):
     #Creo 3 listas una para el nombre de los productos y otras dos para los precios
     productos=["Azúcar","Arroz","Pechuga de Pollo","Picadillo de MDM","Aceite"]
     precios_mypimes=[promedio("Azúcar 1kg"),
@@ -200,9 +209,9 @@ def minimo(producto_buscado):
     return minimo
 
 #Creo la gráfica 5 que es para ver la evolución del dólar
-def variacion_del_usd(diccinario):
+def grafica1(diccinario):
     #Cargar el json
-    with open("El toque/el_toque.json","r") as f:
+    with open("El toque/el_toque.json","r",encoding="utf-8") as f:
         data = json.load(f)
     #Obtener los valores para la gráfica    
     fechas = [item["fecha"] for item in data["datos"]]
@@ -252,7 +261,7 @@ def comparacion_prom_vs_min(diccinario):
                     width=ancho_barra,label="Precios minimos",color="#910018")
     plt.title("Comparación de Precios por producto", fontsize=16,fontweight="bold")
     plt.xlabel("Productos",fontsize=12)
-    plt.ylabel("Precio(USD)",fontsize=12)
+    plt.ylabel("Precios",fontsize=12)
     plt.xticks(posiciones,productos,rotation=45)
     plt.legend()
     plt.grid(axis="y",alpha=0.3,linestyle="--")
@@ -299,5 +308,10 @@ def por_ciento_precios_min(diccinario):
     ax.axis("equal")
     plt.tight_layout()
     plt.show()
- 
+    
+def cal_por_ciento(diccionario):    
+    precio=float(input("Introduzca el precio del producto que desea:"))
+    return (precio/salario_promedio)*100
 
+
+    
